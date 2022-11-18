@@ -1,8 +1,10 @@
 ﻿using System;
-
-Console.WriteLine("Welcome to the Enthusiastic Moose Simulator!");
-Console.WriteLine("--------------------------------------------");
-Console.WriteLine();
+Main();
+void Main()
+{
+    Console.WriteLine("Welcome to the Enthusiastic Moose Simulator!");
+    Console.WriteLine("--------------------------------------------");
+    Console.WriteLine();
 
 
 
@@ -37,13 +39,28 @@ void MooseSays(string message)
                        `^^` `^^^`
     ");
 }
+bool MooseAsks(string question)y
+{
+    Console.Write($"{question} (Y/N): ");
+    string answer = Console.ReadLine().ToLower();
+
+    while (answer != "y" && answer != "n")
+    {
+        Console.Write($"{question} (Y/N): ");
+        answer = Console.ReadLine().ToLower();
+    }
+
+    if (answer == "y")
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
 MooseSays("H i, I'M E N T H U S I A S T I C !");
 MooseSays("I really am enthusiastic");
-
-CanadaQuestion();
-EnthusiasticQuestion();
-LoveCSharpQuestion();
-SecretQuestion();
 
 
 void CanadaQuestion()
@@ -95,26 +112,10 @@ void SecretQuestion()
         MooseSays("oh, no...secrets are the best, I love to share them!");
     }
 }
+CanadaQuestion();
+EnthusiasticQuestion();
+LoveCSharpQuestion();
+SecretQuestion();
 
 
-bool MooseAsks(string question)
-{
-    Console.Write($"{question} (Y/N): ");
-    string answer = Console.ReadLine().ToLower();
-
-    while (answer != "y" && answer != "n")
-    {
-        Console.Write($"{question} (Y/N): ");
-        answer = Console.ReadLine().ToLower();
-    }
-
-    if (answer == "y")
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
 }
-
